@@ -3,6 +3,7 @@
   -->
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
@@ -13,69 +14,116 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="labs.sdm.l0404_xmlfiles.MainActivity">
 
-    <LinearLayout
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/tvFrom"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/etFrom"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/etFrom"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
             android:ems="10"
             android:enabled="false"
             android:focusable="false"
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"
+            app:layout_constraintBottom_toTopOf="@+id/tvTo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvFrom" />
 
         <TextView
             android:id="@+id/tvTo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/etTo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etFrom" />
 
         <EditText
             android:id="@+id/etTo"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
             android:ems="10"
             android:enabled="false"
             android:focusable="false"
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"
+            app:layout_constraintBottom_toTopOf="@+id/tvSubject"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTo" />
 
         <TextView
             android:id="@+id/tvSubject"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/subject" />
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:text="@string/subject"
+            app:layout_constraintBottom_toTopOf="@+id/tvBody"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etTo" />
 
         <EditText
             android:id="@+id/etSubject"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
             android:ems="10"
             android:enabled="false"
             android:focusable="false"
-            android:inputType="textPersonName|textMultiLine" />
+            android:inputType="textPersonName|textMultiLine"
+            app:layout_constraintBottom_toTopOf="@+id/etBody"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvBody" />
 
         <TextView
             android:id="@+id/tvBody"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/body" />
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:text="@string/body"
+            app:layout_constraintBottom_toTopOf="@+id/etSubject"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvSubject" />
 
         <EditText
             android:id="@+id/etBody"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
             android:ems="10"
             android:enabled="false"
             android:focusable="false"
-            android:inputType="textPersonName|textMultiLine" />
+            android:inputType="textPersonName|textMultiLine"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/etSubject" />
 
-    </LinearLayout>
+    </android.support.constraint.ConstraintLayout>
 </ScrollView>
