@@ -137,43 +137,45 @@ public class MainActivity extends AppCompatActivity {
                         if (parser.getName().equalsIgnoreCase(FROM)) {
 
                             // Display the value of the associated attribute Name on the corresponding TextView
-                            tv = (TextView) findViewById(R.id.tvFrom);
+                            tv = findViewById(R.id.tvFrom);
                             tv.setText(String.format(getResources().getString(R.string.from),
                                     parser.getAttributeValue(null, NAME)));
 
                             // Get a reference to the associated EditText
-                            et = (EditText) findViewById(R.id.etFrom);
+                            et = findViewById(R.id.etFrom);
                         }
 
                         // To tag
                         else if (parser.getName().equalsIgnoreCase(TO)) {
 
                             // Display the value of the associated attribute Name on the corresponding TextView
-                            tv = (TextView) findViewById(R.id.tvTo);
+                            tv = findViewById(R.id.tvTo);
                             tv.setText(String.format(getResources().getString(R.string.to),
                                     parser.getAttributeValue(null, NAME)));
 
                             // Get a reference to the associated EditText
-                            et = (EditText) findViewById(R.id.etTo);
+                            et = findViewById(R.id.etTo);
                         }
 
                         // Subject tag
                         else if (parser.getName().equalsIgnoreCase(SUBJECT)) {
                             // Get a reference to the associated EditText
-                            et = (EditText) findViewById(R.id.etSubject);
+                            et = findViewById(R.id.etSubject);
                         }
 
                         // Body tag
                         else if (parser.getName().equalsIgnoreCase(BODY)) {
                             // Get a reference to the associated EditText
-                            et = (EditText) findViewById(R.id.etBody);
+                            et = findViewById(R.id.etBody);
                         }
                         break;
 
                     // Text within a tag
                     case XmlPullParser.TEXT:
-                        // Display the value of the associated Text in the corresponding EditText
-                        et.setText(parser.getText());
+                        if (et != null) {
+                            // Display the value of the associated Text in the corresponding EditText
+                            et.setText(parser.getText());
+                        }
                         break;
                 }
             }

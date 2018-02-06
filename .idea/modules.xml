@@ -3,7 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/L04.04_XMLFiles.iml" filepath="$PROJECT_DIR$/L04.04_XMLFiles.iml" />
+      <module fileurl="file://D:\Docencia\SDM\Test\L04.04_XMLFiles\L04.04_XMLFiles.iml" filepath="D:\Docencia\SDM\Test\L04.04_XMLFiles\L04.04_XMLFiles.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://D:\Docencia\SDM\Test\L04.04_XMLFiles\app\app.iml" filepath="D:\Docencia\SDM\Test\L04.04_XMLFiles\app\app.iml" />
     </modules>
   </component>
 </project>
