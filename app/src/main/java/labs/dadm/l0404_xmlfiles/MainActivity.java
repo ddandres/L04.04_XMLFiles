@@ -5,10 +5,11 @@
 package labs.dadm.l0404_xmlfiles;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.util.Xml;
 import android.widget.EditText;
 import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -29,6 +30,9 @@ public class MainActivity extends AppCompatActivity {
     private static final String TO = "To";
     private static final String SUBJECT = "Subject";
     private static final String BODY = "Body";
+
+    // Constant for file name
+    private static final String FILENAME = "xml_file_internal_storage";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         try {
 
             // Get a Writer to the file in the application internal storage
-            writer = new OutputStreamWriter(openFileOutput("xml_file_internal_storage", MODE_PRIVATE));
+            writer = new OutputStreamWriter(openFileOutput(FILENAME, MODE_PRIVATE));
             // Associate this writer to the XmlSerializer
             serializer.setOutput(writer);
             // Start of document tag
@@ -84,7 +88,7 @@ public class MainActivity extends AppCompatActivity {
 
             // Body tag
             serializer.startTag(null, BODY);
-            serializer.text("Remember to bring your smartphones to the next class");
+            serializer.text("Remember to bring your smartphone to the next class");
             serializer.endTag(null, BODY);
 
             // End of email tag
@@ -124,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
         try {
 
             // Get a reader to the file in the application internal storage
-            reader = new InputStreamReader(openFileInput("xml_file_internal_storage"));
+            reader = new InputStreamReader(openFileInput(FILENAME));
             // Associate this reader to the XmlPullParser
             parser.setInput(reader);
 
