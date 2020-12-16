@@ -5,7 +5,9 @@
 <resources>
     <string name="app_name">L04.04_XMLFiles</string>
     <string name="to">To: %1s</string>
+    <string name="to_description">Email to</string>
     <string name="from">From: %1s</string>
+    <string name="from_description">Email from</string>
     <string name="subject">Subject:</string>
     <string name="body">Body:</string>
 </resources>
