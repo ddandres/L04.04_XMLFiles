@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         // Create the XML file in the application internal storage if it does not exist
-        File file = getFileStreamPath("xml_file_internal_storage");
+        File file = getFileStreamPath(FILENAME);
         if (!file.exists()) {
             createXmlFile();
         }
@@ -50,9 +50,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    /*
-        Creates an XML file using an XmlSerializer
-    */
+    // Creates an XML file using an XmlSerializer
     private void createXmlFile() {
 
         XmlSerializer serializer = Xml.newSerializer();
@@ -81,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
             serializer.text("jcruizg@disca.upv.es");
             serializer.endTag(null, TO);
 
-            // SUbject tag
+            // Subject tag
             serializer.startTag(null, SUBJECT);
             serializer.text("Next class");
             serializer.endTag(null, SUBJECT);
@@ -112,9 +110,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    /*
-        Reads the contents of the XML file and displays in the screen
-    */
+    // Reads the contents of the XML file and displays in the screen
     private void readXmlFile() {
 
         // Hold references to View
